@@ -1,0 +1,20 @@
+{
+	"name": "Lab2",
+	"properties": {
+		"folder": {
+			"name": "lab 2"
+		},
+		"content": {
+			"query": "SELECT\n    TransactionDate, ProductId,\n        CAST(SUM(ProfitAmount) AS decimal(18,2)) AS [(sum) Profit],\n        CAST(AVG(ProfitAmount) AS decimal(18,2)) AS [(avg) Profit],\n        SUM(Quantity) AS [(sum) Quantity]\n\nFROM\n    OPENROWSET(\n        BULK 'https://asadatalake91628xh.dfs.core.windows.net/wwi-02/sale-small/Year=2019/Quarter=Q4/Month=12/Day=20191231/sale-small-20191231-snappy.parquet',\n        FORMAT = 'PARQUET'\n    ) AS [r] GROUP BY r.TransactionDate, r.ProductId;\n\nSELECT\n   count(*)\nFROM\n    OPENROWSET(\n        BULK 'https://asadatalake91628xh.dfs.core.windows.net/wwi-02/sale-small/Year=2019/*/*/*/*',\n        FORMAT = 'PARQUET'\n    ) AS [r]\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
