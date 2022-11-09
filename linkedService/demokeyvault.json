@@ -1,0 +1,10 @@
+{
+	"name": "demokeyvault",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://asakeyvault91628xh.vault.azure.net/"
+		}
+	}
+}
