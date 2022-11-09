@@ -1,0 +1,69 @@
+{
+	"name": "Dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"linkedService": {
+						"referenceName": "asadatalake91628xh",
+						"type": "LinkedServiceReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Parquet1",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "aggregate1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          CustomerId as short,",
+				"          FirstName as string,",
+				"          MiddleInitial as string,",
+				"          LastName as string,",
+				"          FullName as string,",
+				"          Gender as string,",
+				"          Age as short,",
+				"          BirthDate as string,",
+				"          Address_PostalCode as integer,",
+				"          Address_Street as string,",
+				"          Address_City as string,",
+				"          Address_Country as string,",
+				"          Mobile as string,",
+				"          Email as string",
+				"     ),",
+				"     useSchema: false,",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     limit: 100,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'delimited',",
+				"     fileSystem: 'wwi-02',",
+				"     folderPath: 'data-generators',",
+				"     fileName: 'generator-customer-clean.csv',",
+				"     columnDelimiter: ',',",
+				"     escapeChar: '\\\\',",
+				"     quoteChar: '\\\"',",
+				"     columnNamesAsHeader: true) ~> source1",
+				"source1 aggregate(groupBy(Gender),",
+				"     avgAge = avg(Age)) ~> aggregate1",
+				"aggregate1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'parquet',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
+			]
+		}
+	}
+}
