@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "asaworkspace91628xh"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"CosmosDb1_connectionString": {
+			"value": ""
+		},
+		"asadatalake91628xh_accountKey": {
+			"value": ""
+		},
+		"asastore91628xh_connectionString": {
+			"value": ""
+		},
+		"asaworkspace91628xh-WorkspaceDefaultSqlServer_connectionString": {
+			"value": ""
+		},
+		"sqlpool01_connectionString": {
+			"value": ""
+		},
+		"asadatalake91628xh_properties_typeProperties_url": {
+			"value": "https://asadatalake91628xh.dfs.core.windows.net"
+		},
+		"asakeyvault91628xh_properties_typeProperties_baseUrl": {
+			"value": "https://asakeyvault91628xh.vault.azure.net/"
+		},
+		"asaworkspace91628xh-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://asadatalake91628xh.dfs.core.windows.net"
+		},
+		"demokeyvault_properties_typeProperties_baseUrl": {
+			"value": "https://asakeyvault91628xh.vault.azure.net/"
+		}
+	}
+}
