@@ -1,0 +1,20 @@
+{
+	"name": "DestinationDataset_09b",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "parquetdest",
+				"container": "purviewsource"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
