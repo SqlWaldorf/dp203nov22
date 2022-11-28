@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_k59",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "espcdemodb",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "CustomerUntyped"
+		}
+	}
+}
