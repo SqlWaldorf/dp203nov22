@@ -23,6 +23,9 @@
 		"asaworkspace91628xh-WorkspaceDefaultSqlServer_connectionString": {
 			"value": ""
 		},
+		"espcdemodb_connectionString": {
+			"value": ""
+		},
 		"sqlpool01_connectionString": {
 			"value": ""
 		},
@@ -37,6 +40,9 @@
 		},
 		"demokeyvault_properties_typeProperties_baseUrl": {
 			"value": "https://asakeyvault91628xh.vault.azure.net/"
+		},
+		"taxipq_sasUri": {
+			"value": ""
 		}
 	}
 }
