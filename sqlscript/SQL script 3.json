@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 3",
+	"properties": {
+		"content": {
+			"query": "alter database demo2 collate Latin1_General_100_BIN2_UTF8\n\nSELECT\ntop 100 *\nFROM\n    OPENROWSET(\n        BULK 'https://asadatalake91628xh.dfs.core.windows.net/tempdata/u2utest/census_income_2.csv',\n        FORMAT = 'CSV',\n        PARSER_VERSION = '2.0',\n        HEADER_ROW = TRUE\n    ) AS [result]\n\n\n\n-- This is auto-generated code\nSELECT\n    avg(cast([education-num] as int)) as avg_edu, education\nFROM\n    OPENROWSET(\n        BULK 'https://asadatalake91628xh.dfs.core.windows.net/tempdata/u2utest/census_income_2.csv',\n        FORMAT = 'CSV',\n        PARSER_VERSION = '2.0',\n        HEADER_ROW = TRUE\n    ) AS [result]\ngroup by education\norder by 1 DESC\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "demo2",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
